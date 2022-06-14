@@ -1,5 +1,5 @@
 export interface User {
-    name: string;
+    id: string;
     email: string;
     password: string;
 }
@@ -7,11 +7,11 @@ export interface User {
 export function isUserItem(arg: any): arg is User {
     return (
         typeof arg === 'object' &&
-        typeof arg.name === 'string' &&
+        typeof arg.id === 'string' &&
         typeof arg.password === 'string' &&
         typeof arg.email === 'string' &&
 
-        arg.name.length > 0 &&
+        arg.id.length > 0 &&
         arg.password.length > 0 &&
         arg.email.length > 0
     );
